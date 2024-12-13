@@ -1,0 +1,91 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #0030A8;
+    transition: background-color 0.3s ease;
+    height: 60px; /* Fixed height */
+}
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo {
+    margin-top: 15px;
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .newsletterText {
+    color: #ffffff;
+  }
+  
+  .newsletterLink {
+    color: #ffbb00; /* Example link color */
+    text-decoration: none;
+    margin-left: 8px;
+  }
+  
+  .newsletterLink:hover {
+    color: #e09200; /* Darker link color on hover */
+    text-decoration: none;
+  }
+  
+  .navRight {
+    display: flex; /* Flexbox for horizontal links */
+    gap: 50px; /* Spacing between links */
+    margin-right: 70px;
+  }
+  
+  .navRight a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .navRight a:hover {
+    color: #a5a5a5; /* Change color on hover */
+  }
+  
+  @media (max-width: 1050px) {
+    /* Hide Newsletter Section */
+    .newsletterText {
+        display: none;
+    }
+  
+  }
+  @media (max-width: 768px) {
+    /* Adjust Nav Right Items */
+    .navRight a {
+        margin: 0px;
+        font-size: clamp(15px, 4vw, 20px);
+    }
+  
+    .navRight {
+      gap: 3vw;
+      margin-right: 5vw;
+    }
+  }
+  
+  
+  @media (max-width: 570px) {
+    .navbar {
+  
+      padding: 0px 10px; /* Padding for spacing */
+  
+    }
+    .logo {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+  

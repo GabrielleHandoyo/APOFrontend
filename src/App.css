@@ -1,0 +1,72 @@
+/* Center everything in the entire app */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  justify-content: center; /* Centers horizontally */
+  margin: 0;
+  background-color: #fff0cc; /* Your background color */
+  color: black; /* Normal text color */
+  cursor: default;
+}
+
+/* To center individual containers */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centers text within the container */
+  max-width: 800px;
+}
+
+/* Header */
+h1 {
+  font-family: 'Dongle', sans-serif;
+  font-size: 100px; /* Adjust as needed */
+  margin: 0.5rem 0;
+  text-align: center; /* Centers text within the container */
+}
+
+/* descriptions */
+p {
+  font-family: 'Delius';
+  font-size: 25px; /* Adjust as needed */
+  margin: 0.5rem 0;
+}
+
+/* numbers */
+h2 {
+  font-family: 'Delius';
+  font-size: 25px; /* Adjust as needed */
+  margin: 0.5rem 0;
+}
+
+/*   */
+h3 {
+  font-family: 'NTR', sans-serif;
+  font-size: 1.5rem; /* Adjust as needed */
+  margin: 0.5rem 0;
+}
+
+
+
+a {
+  font-family: 'NTR', sans-serif;
+  font-size: 24px; /* Adjust as needed */
+  cursor: pointer;
+}
+
+/* Button styles */
+button {
+  font-family: 'NTR', sans-serif; /* Optional for button font */
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffbb00; /* Darker yellow on hover */
+}
+

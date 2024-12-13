@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    justify-content: center; /* Centers horizontally */
+    margin: 0;
+    color: black; /* Normal text color */
+    cursor: default;
+  }
+  
+  .contactInfo {
+    padding: 40px 20px;
+    padding-top: 100px;
+    text-align: center;
+    background: 
+        linear-gradient(
+            rgba(255, 240, 204, 0.5), /* Lighter gradient with lower opacity */
+            rgba(255, 205, 89, 0.5)
+        ),
+        url("../../assets/apopattern.png");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    color: #000;
+}
+.header {
+    margin-bottom: 40px;
+    padding:  20px 60px;
+    border: 4px solid #FFBF35;
+    display: inline-block;
+    background-color: #193DAA;
+}
+
+.header h1 {
+    font-family: 'Playpen Sans';
+    color: #FFBF35;
+    margin: 0px;
+    font-size: 50px;
+}
+
+.header p {
+    font-size: 1rem;
+    color: #444;
+    margin: 10px 0 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 280px;
+    height: 400px; /* Limits the maximum width */
+    margin: auto; /* Centers the card in the column */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.image {
+    border-radius: 10px;
+    height: auto; /* Maintains aspect ratio */
+    width: 200px; /* Prevents overflow */
+    aspect-ratio: 1 / 1; /* Forces image to be square */
+    object-fit: cover; /* Ensures the image scales properly */
+
+}
+
+.name {
+    font-weight: bold;
+    color: #0030A8;
+    font-family: 'Delius';
+    font-size: 20px; /* Adjust as needed */
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.card p {
+    color: #444;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card .email {
+    color: #2F6C00;
+    text-decoration: none;
+}
+
+.card .email:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

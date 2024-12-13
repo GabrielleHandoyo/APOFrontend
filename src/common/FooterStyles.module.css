@@ -1,0 +1,125 @@
+.footerSection {
+  position: relative; /* Prevents overlap */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ensures the footer spans the full width */
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: flex-start; /* Aligns items at the top */
+  background-color: #003399; /* Background color */
+  color: white; /* Text color */
+  padding: 20px 40px; /* Adds padding */
+  gap: 20px; /* Spacing between items */
+  text-align: center;
+  box-sizing: border-box; /* Includes padding in width calculations */
+  overflow: hidden; /* Prevents content from overflowing */
+}
+  .linksContainer {
+    flex: 1;
+    max-width: 300px; /* Ensure a consistent width for sections */
+    text-align: center; /* Center-align the text inside each section */
+  }
+  
+  .logoContainer {
+    margin: 0 50px;
+  }
+  
+  .logoContainer p {
+    font-size: 10px;
+    max-width: 200px;
+  }
+  .linksContainer {
+    text-align: left; /* Centers the Quick Links section */
+  
+  }
+  
+  .logoImage {
+    max-width: 180px;
+  }
+  
+  
+  .linksContainer h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #FFD700;
+  }
+  
+  .linksWrapper {
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Two columns with balanced spacing */
+  
+    justify-content: center; /* Center the grid within the container */
+  }
+  
+  .linksWrapper a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .linksWrapper a:hover {
+    text-decoration: underline;
+  }
+  
+  .socialContainer {
+    flex: 1;
+    text-align: left;
+    max-width: 150px;
+  }
+  
+  .socialContainer h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #FFD700;
+  }
+  
+  .socialLinks {
+    display: flex; /* Arrange social links horizontally */
+    gap: 10px; /* Space between links */
+    margin-bottom: 10px;
+  }
+  
+  .socialContainer a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .donateButton {
+    background-color: #FFD700;
+    color: #003399;
+    border: none;
+    padding: 5px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  .donateButton:hover {
+    background-color: #ffcc00;
+  }
+  
+  
+  @media (max-width: 835px) {
+    .socialContainer {
+      justify-content: center; /* Center content horizontally */
+      text-align: center;
+    }
+  
+    .socialLinks {
+      justify-content: center;
+    }
+  
+  }
+  
+  @media (max-width: 515px) {
+    .logoContainer,
+    .socialContainer,
+    .linksContainer {
+      justify-content: center; /* Center content horizontally */
+      text-align: center;
+    }
+  }

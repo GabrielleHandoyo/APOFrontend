@@ -1,0 +1,775 @@
+/* General reset */
+body {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex; /* Flexbox to align left and right components */
+  justify-content: space-between; /* Left content on the left, right content on the right */
+  align-items: center; /* Center items vertically */
+  width: 100%; /* Full width */
+  padding: 0px 20px; /* Padding for spacing */
+  position: fixed; /* Sticks navbar at the top */
+  top: 0;
+  z-index: 1000; /* Ensures navbar stays on top */
+  background-color: transparent; /* Transparent by default */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  height: 60px;
+  
+}
+
+.navbar.opaque {
+  background-color: #0030A8; /* Adjust the opacity and color */
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  margin-top: 15px;
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+.newsletterText {
+  color: #ffffff;
+}
+
+.newsletterLink {
+  color: #ffbb00; /* Example link color */
+  text-decoration: none;
+  margin-left: 8px;
+}
+
+.newsletterLink:hover {
+  color: #e09200; /* Darker link color on hover */
+  text-decoration: none;
+}
+
+.navRight {
+  display: flex; /* Flexbox for horizontal links */
+  gap: 50px; /* Spacing between links */
+  margin-right: 70px;
+}
+
+.navRight a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navRight a:hover {
+  color: #a5a5a5; /* Change color on hover */
+}
+
+@media (max-width: 1050px) {
+  /* Hide Newsletter Section */
+  .newsletterText {
+      display: none;
+  }
+
+}
+@media (max-width: 768px) {
+  /* Adjust Nav Right Items */
+  .navRight a {
+      margin: 0px;
+      font-size: clamp(15px, 4vw, 20px);
+  }
+
+  .navRight {
+    gap: 3vw;
+    margin-right: 5vw;
+  }
+}
+
+
+@media (max-width: 570px) {
+  .navbar {
+
+    padding: 0px 10px; /* Padding for spacing */
+
+  }
+  .logo {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+/* Home section styles */
+.homeSection {
+  height: 100vh;
+  width: 100%;
+  background: url(../../assets/homepagepic.jpg) no-repeat center center/cover;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust the color and opacity */
+  z-index: 1; /* Place it behind the content */
+}
+
+.homeSection > * {
+  position: relative; /* Ensure content appears above the overlay */
+  z-index: 2;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  height: 100%; /* Ensure the container takes up full height */
+}
+
+.secondImage {
+  width: 80vw;
+  max-width: 700px;
+  height: auto;
+}
+
+
+.arrowContainer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+
+
+
+
+
+/* Section styles */
+.aboutSection {
+  padding: 100px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically if needed */
+}
+
+.aboutDescription {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.aboutContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 50px auto; /* Center horizontally */
+  max-width: 1200px; /* Limit total width */
+}
+/* line */
+.aboutContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background-color: #ffc400;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+/* Card styles */
+.aboutcard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9vw;
+  position: relative;
+  max-width: 100%; /* Prevent cards from overflowing */
+  flex-wrap: wrap; /* Allow wrapping for better spacing */
+}
+
+.cardText h2 {
+  text-decoration: underline;
+}
+
+.cardText h3 {
+  color: #f5a623;
+  font-size: 35px;
+}
+
+/* Card text styles */
+.cardText {
+  flex: 1;
+  padding: 1rem;
+  text-align: left; /* Default alignment */
+}
+
+/* Specific right-alignment for Leader and Service cards */
+.cardLeader .cardText,
+.cardService .cardText {
+  text-align: right;
+}
+
+
+.cardText p {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  word-wrap: break-word; /* Prevent long text from spilling */
+}
+
+.cardText button {
+  border: 1.5px solid #000000; /* Add a solid black border */
+  background-color: transparent; /* Make the background transparent */
+  color: #000000; /* Set the text color to black */
+  border-radius: 14px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.cardText button:hover {
+  background-color: #ffc23e; /* Change the background color on hover */
+  color: #ffffff; /* Optional: Change the text color on hover */
+}
+
+
+
+.cardImageWrapper {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Limit image size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Rectangle background */
+.rectangleBackground {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffbe5e;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+
+.cardImageWrapper img {
+  position: relative; /* Place it above the rectangle */
+  z-index: 2; /* Ensure it sits on top */
+  max-width: 100%; /* Scale within the wrapper */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 0px 50px 50px 50px; /* Top-left sharp, others rounded */
+  object-fit: cover; /* Ensure it covers the space properly */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+/* Card image styles for "Be a Friend" */
+.cardFriend .rectangleBackground {
+  top: -40px; /* Move the shadow upward */
+  left: -40px; /* Move the shadow to the left */
+}
+
+
+.cardFriend .cardImageWrapper img {
+  border-radius: 50px 50px 0px 50px; /* Sharp top-left corner for this card only */
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+  .card {
+    max-width: 1000px; /* Center cards for larger screens */
+    margin: 0 auto; /* Keep content centered */
+  }
+
+}
+
+@media (max-width: 1000px) {
+  .aboutSection {
+    padding: 50px;
+  }
+    /* Rectangle background */
+    .rectangleBackground {
+      top: 20px;
+      left: 20px;
+    }
+  
+      /* Card image styles for "Be a Friend" */
+    .cardFriend .rectangleBackground {
+      top: -20px; /* Move the shadow upward */
+      left: -20px; /* Move the shadow to the left */
+    }
+
+
+}
+
+@media (max-width: 600px) {
+  .aboutContent::before {
+    display: none; /* Hide the vertical line */
+  }
+  .cardImageWrapper {
+    display: none; /* Hide the images */
+  }
+}
+
+
+
+
+
+
+
+
+.rushSection {
+  position: relative; /* Ensure positioning for pseudo-element */
+  text-align: center;
+  padding: 50px 20px;
+  transition: background-color 1.5s ease, background-image 1.5s ease;
+  background-image: none;
+  overflow: hidden; 
+}
+
+.rushSection::before {
+  content: ""; /* Add a pseudo-element for the background image */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/APObackground.png); /* Your background image */
+  background-size: cover; /* Ensure the image covers the section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  opacity: 0; /* Start fully transparent */
+  transition: opacity 1.5s ease; /* Smooth fade-in for the image */
+  pointer-events: none; /* Prevent the pseudo-element from blocking interaction */
+}
+
+.rushSection.active {
+  background-color: #DEF1FF; /* Transition to blue color */
+  
+}
+.headerContainer, .videoContainer, .rushcard {
+  position: relative;
+  z-index: 1; /* Ensure content stays above the background image */
+}
+.rushSection.active::before {
+  opacity: 1; /* Fade in the background image */
+}
+
+/* Other styles remain unchanged */
+
+.videoContainer {
+  margin: 20px;
+}
+
+.youtubeVideo {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  border: none;
+}
+
+
+.rushcard {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 70px auto;
+}
+
+.rushcard h2 {
+  font-family: 'Copse';
+  font-size: 35px; /* Adjust as needed */
+  margin: 10px 0 30px 0;
+}
+
+.rushcard p {
+  font-size: 22px;
+  margin: 25px 15px 20px 15px;
+}
+
+.cardImage {
+  width: 100%;
+  border-radius: 30px;
+}
+
+
+@media (max-width: 600px) {
+  .videoContainer {
+    margin: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.contactSection {
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  min-height: 100vh; /* Take full viewport height */
+  box-sizing: border-box; /* Include padding in dimensions */
+  margin-bottom: 100px;
+  padding: 0 20px;
+}
+
+.topButtons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contactButton {
+  background-color: #FACA50; /* Yellow button color */
+  color: black;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contactButton:hover {
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+.contentContainer {
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 2vw; /* Space between elements */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+
+
+
+.leftContainer {
+  flex: 1;
+  min-width: 300px;
+}
+
+.infoBox {
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 0 auto; /* Center horizontally */
+  margin-bottom: 20px;
+  max-width: 600px; /* Restrict width for responsiveness */
+  text-align: center; /* Optional: Center text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contactSection p {
+  font-size: 20px;
+}
+
+.linkButton {
+  display: inline-block;
+  padding: 0 15px;
+  background-color: #FACA50;
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: 10px 0 0 10px;
+  transition: transform 0.2s ease;
+}
+
+.linkButton:hover {
+  background-color: #ffae00;
+}
+
+
+
+
+
+.contactForm {
+  background-color: #ffffff; /* Light blue background */
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 580px; /* Ensure it stretches within the container */
+  margin: 0 auto; /* Center align within the parent */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align inputs horizontally */
+  gap: 15px; /* Space between inputs */
+}
+
+
+.inputWrapper, .textareaWrapper {
+  width: 100%; /* Ensure inputs stretch across the form */
+  position: relative; /* For positioning the button inside the textarea */
+}
+
+.inputField, .textareaField {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccd9e3; /* Light gray border */
+  border-radius: 30px;
+  font-size: 1rem;
+  background-color: #EEFBFF; /* Subtle background color */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Slight inset shadow */
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.inputField::placeholder, .textareaField::placeholder {
+  color: #888; /* Placeholder color */
+}
+
+.inputField:focus, .textareaField:focus {
+  border-color: #8cb3d9; /* Blue highlight on focus */
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.textareaField {
+  height: 250px;
+  resize: none;
+  padding-right: 50px; /* Add space for the button inside the textarea */
+}
+
+.sendButton {
+  position: absolute;
+  bottom: 10px; /* Adjust to position the button */
+  right: 10px; /* Bottom-right corner of the textarea */
+  background-color: #ffffff; /* Yellow button */
+  border: none;
+  color: #7385FF;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px; /* Circular button */
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding-top: 15px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.sendButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+}
+
+
+
+.rightContainer {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.groupPhoto {
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+     padding: 50px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .contentContainer {
+    margin: 50px auto;
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .infoBox {
+    width: 80vw; /* Responsive width */
+    max-width: 550px; /* Limit maximum width */
+    margin: 0 auto;
+    
+ }
+
+ .contactForm {
+  margin-top: 50px;
+ }
+  .groupPhoto {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+.footerSection {
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+  justify-content: center; /* Center align all content */
+  align-items: flex-start; /* Align items to the top */
+  background-color: #003399; /* Footer background */
+  color: white; /* Text color */
+  padding: 20px 40px; /* Adjust padding */
+  gap: 20px; /* Space between containers */
+  text-align: center; /* Center-align text by default */
+}
+
+.linksContainer {
+  flex: 1;
+  max-width: 300px; /* Ensure a consistent width for sections */
+  text-align: center; /* Center-align the text inside each section */
+}
+
+.logoContainer {
+  margin: 0 50px;
+}
+
+.logoContainer p {
+  font-size: 10px;
+  max-width: 200px;
+}
+.linksContainer {
+  text-align: left; /* Centers the Quick Links section */
+
+}
+
+.logoImage {
+  max-width: 180px;
+}
+
+
+.linksContainer h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #FFD700;
+}
+
+.linksWrapper {
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Two columns with balanced spacing */
+
+  justify-content: center; /* Center the grid within the container */
+}
+
+.linksWrapper a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.linksWrapper a:hover {
+  text-decoration: underline;
+}
+
+.socialContainer {
+  flex: 1;
+  text-align: left;
+  max-width: 150px;
+}
+
+.socialContainer h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #FFD700;
+}
+
+.socialLinks {
+  display: flex; /* Arrange social links horizontally */
+  gap: 10px; /* Space between links */
+  margin-bottom: 10px;
+}
+
+.socialContainer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.donateButton {
+  background-color: #FFD700;
+  color: #003399;
+  border: none;
+  padding: 5px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.donateButton:hover {
+  background-color: #ffcc00;
+}
+
+
+@media (max-width: 835px) {
+  .socialContainer {
+    justify-content: center; /* Center content horizontally */
+    text-align: center;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 515px) {
+  .logoContainer,
+  .socialContainer,
+  .linksContainer {
+    justify-content: center; /* Center content horizontally */
+    text-align: center;
+  }
+}
